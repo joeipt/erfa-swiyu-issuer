@@ -64,13 +64,30 @@ check_dependencies() {
 # Configuration
 IDENTIFIER_API_URL="https://identifier-reg-api.trust-infra.swiyu-int.admin.ch"
 IDENTIFIER_URL="https://identifier-reg.trust-infra.swiyu-int.admin.ch"
-SWIYU_PARTNER_ID="0c0d7cf6-58a8-4669-9909-884af3eb0cec"
-TOKEN="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKTDFNMS1NQjMwQVQ0VjhIQkI0X2V6M3M0YWpRc0NiN2ZZcmRRbnFlMUlzIn0.eyJleHAiOjE3NzY5MzgwNzAsImlhdCI6MTc3Njg0ODA3MCwianRpIjoib2ZydGNjOjY4MTRlZTE0LWMwNzEtNDE2YS04OWQxLTZhMDAxZTE3ZjljZiIsImlzcyI6Imh0dHBzOi8va2V5bWFuYWdlci1wcmQuYXBpLmFkbWluLmNoL2tleWNsb2FrL3JlYWxtcy9BUElHVyIsInN1YiI6InByb2RfcHJpc2FtLXBhbXNfMGMwZDdjZjYtNThhOC00NjY5LTk5MDktODg0YWYzZWIwY2VjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiN2JiYmYxYWYtMWI5My00ZWY3LWI2ZjctNjFiMmY0ZTM0MTlkIiwic2lkIjoiMTU0Zjg3OTgtMzQ2NC00MjAyLWIzYTEtNWJjZDkwYTQ3MzI2Iiwic2NvcGUiOiJvZmZsaW5lX2FjY2VzcyIsImVudmlyb25tZW50IjoicHJvZCIsImJwcm9sZXMiOnsiMGMwZDdjZjYtNThhOC00NjY5LTk5MDktODg0YWYzZWIwY2VjIjpbInRpX0B0cnVzdG9uYm9hcmRpbmdzdWJtaXNzaW9uXyNyZWFkIiwidGlfQHRydXN0b25ib2FyZGluZ3N1Ym1pc3Npb25fI3dyaXRlIiwidGlfQHZjc2NoZW1hc3VibWlzc2lvbl8jcmVhZCIsInRpX0B2Y3NjaGVtYXN1Ym1pc3Npb25fI3dyaXRlIiwidGlfQGlkZW50aWZpZXJfI3JlYWQiLCJ0aV9AaWRlbnRpZmllcl8jd3JpdGUiLCJ0aV9Ac3RhdHVzXyNyZWFkIiwidGlfQHN0YXR1c18jd3JpdGUiXX0sImNsaWVudEhvc3QiOiIxMC4xNzcuMjcuNzkiLCJjdHgiOiJCMkIiLCJzdWJzY3JpYmVkQVBJcyI6W3sibmFtZSI6InN3aXl1Y29yZWJ1c2luZXNzX3RydXN0IiwidmVyc2lvbiI6IjAuMC4xIn0seyJuYW1lIjoic3dpeXVjb3JlYnVzaW5lc3NfaWRlbnRpZmllciIsInZlcnNpb24iOiIwLjAuMSJ9LHsibmFtZSI6InN3aXl1Y29yZWJ1c2luZXNzX3N0YXR1cyIsInZlcnNpb24iOiIwLjAuMSJ9XSwiY2xpZW50QWRkcmVzcyI6IjEwLjE3Ny4yNy43OSIsImNsaWVudF9pZCI6IjdiYmJmMWFmLTFiOTMtNGVmNy1iNmY3LTYxYjJmNGUzNDE5ZCJ9.ZrX5cOdWuubZDJ-wTdBrn_9MAXjGR0PPIisDthO5maqAp-SjtSB2AWqUX5DFVXRuQeYa09Tq7SoskXyjr1Qe_THp3vzSiWzeGstpppQxuU-dCd_Xa8elQbfNov-InCle_4dMB1c1XaIFNhh_0upGkmhc_WnucpTWg0OO7PyjRPg-EpJE_niNlc-aZqqo-THEiRHtboyxOWF2uxg4VZqepMjbfOHAXcpNQUk94xwzLqMaTFxWC6mq5xMnMFu5FYbssaRXS5Ch2PyZ9gI6q1828XFQeed9BW_xus1ZP2xX_kGPh0898wRq30tkMBq6E-C6fNfW97H8F-eO19BVv99yBA"
-
 
 log_info "Checking dependencies..."
 check_dependencies
 log_success "All dependencies found"
+
+echo ""
+log_info "Please provide the following information:"
+echo ""
+
+# Prompt for SWIYU_PARTNER_ID
+read -p "Enter your SWIYU Partner ID: " SWIYU_PARTNER_ID
+if [[ -z "$SWIYU_PARTNER_ID" ]]; then
+    log_error "SWIYU_PARTNER_ID cannot be empty"
+    exit 1
+fi
+
+# Prompt for TOKEN
+read -p "Enter your Bearer Token: " TOKEN
+echo ""
+if [[ -z "$TOKEN" ]]; then
+    log_error "TOKEN cannot be empty"
+    exit 1
+fi
+
 
 echo ""
 log_info "Configuration:"
