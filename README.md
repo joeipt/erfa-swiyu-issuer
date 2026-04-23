@@ -23,10 +23,12 @@ Read the whole instructions of this step before clicking on the link.
 
 Follow the official documentation at the link below to do the Base Onboarding flow
 
-Complete the following steps only:
-- Step 1: Business Partner Registration
-- Step 2: Request access to the trust infrastructure
-- **Important: Do NOT perform Step 3 (Technical Onboarding) at this stage.**
+Complete the first two Steps of the Onboarding Cookbook. This includes:
+- Sign up to Eportal
+- Create your own Business
+- Get API Key for your Application *(And save all four tokens/credentials to a local file)*
+
+**Important: Do NOT perform Step 3 (Technical Onboarding) at this stage.**
 
 [Onboarding into Base and Trust Registry](https://swiyu-admin-ch.github.io/cookbooks/onboarding-base-and-trust-registry/#business-partner-registration)
 
