@@ -117,7 +117,7 @@ curl -X 'POST' \
   }
 }'
 ```
-
+You need to save the Response as you will need the statusRegistryUrl.
 The response should look like this:
 ```json
 {
