@@ -42,6 +42,22 @@ And the business id you find under: https://portal.trust-infra.swiyu-int.admin.c
 
 If the script doesnt prompt you to input your BusinessId and Token it means I forgot to update it. In that case just open the script and replace the **TOKEN** and **SWIYU_BUSINESS_ID**
 
+The Script can fail on MacOS because of some limitation to the terminal in MacOS. In that case you can open the [script](./setup-script/run-system-demo.sh) and on line 83 replace 
+```bash
+read -r -p "Enter your Bearer Token: " TOKEN
+echo ""
+if [[ -z "$TOKEN" ]]; then
+    log_error "TOKEN cannot be empty"
+    exit 1
+fi
+```
+with
+```bash
+TOKEN="Bearer <YOUR TOKEN HERE>"
+
+```
+
+
 ## Step 3: Generic Issuer Configuration
 
 Follow the instructions on the [Onboarding Generic Issuer](https://swiyu-admin-ch.github.io/cookbooks/onboarding-generic-issuer/) page to populate your environment variables.
