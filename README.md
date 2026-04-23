@@ -10,7 +10,7 @@ This workshop guides you through the process of becoming a Trust Service Provide
 ## Prerequisites
 
 - Docker and Docker Compose
-- Java 21 or higher
+- Java 25 Temurin jdk
 - jq command-line utility
 - ngrok client
 - swiyu wallet app installed on a mobile device
@@ -59,6 +59,8 @@ TOKEN="Bearer <YOUR TOKEN HERE>"
 
 
 ## Step 3: Generic Issuer Configuration
+
+Fill out the .env variables (Except for External_URL, which is described in 3.1)
 
 Follow the instructions on the [Onboarding Generic Issuer](https://swiyu-admin-ch.github.io/cookbooks/onboarding-generic-issuer/) page to populate your environment variables.
 
