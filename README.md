@@ -34,7 +34,11 @@ Complete the first two Steps of the Onboarding Cookbook. This includes:
 
 ## Step 2: Run Onboarding Script
 
-Run the [setup script](./setup-script/run-system-demo.sh). 
+Navigate into the ./setup-script directory to run the [setup script](./setup-script/run-system-demo.sh). 
+If you get an error that the didtoolbox is missing it is very likely you are not yet in /setup-script
+
+The script will prompt you to enter a token (this is the access-token you got in the steps before)
+And the business id you find under: https://portal.trust-infra.swiyu-int.admin.ch/ui/organizations
 
 If the script doesnt prompt you to input your BusinessId and Token it means I forgot to update it. In that case just open the script and replace the **TOKEN** and **SWIYU_BUSINESS_ID**
 

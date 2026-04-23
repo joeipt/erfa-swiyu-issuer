@@ -74,14 +74,14 @@ log_info "Please provide the following information:"
 echo ""
 
 # Prompt for SWIYU_PARTNER_ID
-read -p "Enter your SWIYU Partner ID: " SWIYU_PARTNER_ID
+read -r -p "Enter your SWIYU Partner ID: " SWIYU_PARTNER_ID
 if [[ -z "$SWIYU_PARTNER_ID" ]]; then
     log_error "SWIYU_PARTNER_ID cannot be empty"
     exit 1
 fi
 
 # Prompt for TOKEN
-read -p "Enter your Bearer Token: " TOKEN
+read -r -p "Enter your Bearer Token: " TOKEN
 echo ""
 if [[ -z "$TOKEN" ]]; then
     log_error "TOKEN cannot be empty"
