@@ -81,12 +81,28 @@ if [[ -z "$SWIYU_PARTNER_ID" ]]; then
 fi
 
 # Prompt for TOKEN
-read -r -p "Enter your Bearer Token: " TOKEN
-echo ""
-if [[ -z "$TOKEN" ]]; then
-    log_error "TOKEN cannot be empty"
-    exit 1
-fi
+echo -n "Paste your Bearer Token and press ENTER: "
+# 1. Save current terminal settings
+old_stty_cfg=$(stty -g)
+
+# 2. Disable the limit (icanon) and echoing (echo) so the screen doesn't get messy
+stty -icanon -echo
+
+# 3. Read the input character by character until a newline is hit
+TOKEN=""
+while true; do
+    # Read 1 character at a time
+    char=$(dd bs=1 count=1 2>/dev/null)
+    # If character is a newline (Enter), stop reading
+    if [[ "$char" == $'\n' || "$char" == $'\r' ]]; then
+        break
+    fi
+    TOKEN+="$char"
+done
+
+# 4. Restore terminal settings
+stty "$old_stty_cfg"
+echo "" # Move to a new line after the input
 
 
 echo ""
