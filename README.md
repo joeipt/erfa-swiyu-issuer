@@ -26,7 +26,8 @@ Follow the official documentation at the link below to do the Base Onboarding fl
 Complete the first two Steps of the Onboarding Cookbook. This includes:
 - Sign up to Eportal
 - Create your own Business
-- Get API Key for your Application *(And save all four tokens/credentials to a local file)*
+- Subscripe to the status API and identifier API with your business
+- Get API Key for your Application *(And save all four tokens/credentials to a local file)*: https://selfservice.api.admin.ch/api-selfservice/applications
 
 **Important: Do NOT perform Step 3 (Technical Onboarding) at this stage.**
 
